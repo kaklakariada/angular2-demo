@@ -10,7 +10,4 @@ export class LoginFormComponent {
   model = new Login('', '');
   submitted = false;
   onSubmit() { this.submitted = true; }
-  get diagnostic() {
-    return JSON.stringify(this.model);
-  }
 }
