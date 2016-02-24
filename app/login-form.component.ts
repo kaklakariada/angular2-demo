@@ -10,4 +10,7 @@ export class LoginFormComponent {
   model = new Login('', '');
   submitted = false;
   onSubmit() { this.submitted = true; }
+  doLogin() {
+    console.log("Logging in user ''" + this.model.username + "'");
+  }
 }
