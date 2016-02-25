@@ -20,13 +20,13 @@
     <script>
       System.config({
         packages: {
-          app: {
+          "dist/app": {
             format: 'register',
             defaultExtension: 'js'
           }
         }
       });
-      System.import('app/main')
+      System.import('dist/app/main')
             .then(null, console.error.bind(console));
     </script>
 
