@@ -8,7 +8,8 @@
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "typings": "typings",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "tslint": "tslint -c tslint.json app/**/*.ts"
   },
   "license": "ISC",
   "dependencies": {
@@ -25,6 +26,8 @@
     "concurrently": "^2.0.0",
     "lite-server": "^2.1.0",
     "typescript": "^1.7.5",
+    "gulp-tslint": "^4.3.2",
+    "tslint": "^3.4.0",
     "typings": "^0.6.8",
     "gulp": "^3.9.0",
     "gulp-typescript": "^2.8.0",

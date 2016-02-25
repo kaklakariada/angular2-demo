@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const del = require('del');
 const typescript = require('gulp-typescript');
 const sourcemaps = require('gulp-sourcemaps');
-
+const tslint = require('gulp-tslint');
 
 // clean the contents of the distribution directory
 gulp.task('clean', function() {
@@ -19,5 +19,11 @@ gulp.task('compile', ['clean'], function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['compile']);
+gulp.task('tslint', function() {
+  return gulp.src('app/**/*.ts')
+    .pipe(tslint())
+    .pipe(tslint.report('verbose'));
+});
+
+gulp.task('build', ['compile', 'tslint']);
 gulp.task('default', ['build']);
