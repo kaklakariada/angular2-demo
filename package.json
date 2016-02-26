@@ -9,7 +9,8 @@
     "lite": "lite-server",
     "typings": "typings",
     "postinstall": "typings install",
-    "tslint": "tslint -c tslint.json app/**/*.ts"
+    "tslint": "tslint -c tslint.json app/**/*.ts",
+    "gulp": "gulp"
   },
   "license": "ISC",
   "dependencies": {
