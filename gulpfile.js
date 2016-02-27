@@ -2,7 +2,23 @@ const gulp = require('gulp');
 const del = require('del');
 const typescript = require('gulp-typescript');
 const sourcemaps = require('gulp-sourcemaps');
+const watch = require('gulp-watch');
+const batch = require('gulp-batch');
 const tslint = require('gulp-tslint');
+var browsersync = require('browser-sync').create();
+
+
+gulp.task('serve', ['compile', 'copy:libs'], function() {
+  browsersync.init({
+    server: {
+      baseDir: ["./dist", "./"]
+    }
+  });
+  gulp.watch("app/**/*.ts", ['compile']);
+  gulp.watch("app/**/*.html").on('change', browsersync.reload);
+  gulp.watch("index.html").on('change', browsersync.reload);
+  gulp.watch("styles.css").on('change', browsersync.reload);
+});
 
 // clean the contents of the distribution directory
 gulp.task('clean', function() {
@@ -29,7 +45,7 @@ gulp.task('copy:libs', ['clean'], function() {
       'node_modules/rxjs/bundles/Rx.js',
       'node_modules/angular2/bundles/angular2.dev.js'
     ])
-    .pipe(gulp.dest('dist/lib'))
+    .pipe(gulp.dest('dist/lib'));
 });
 
 gulp.task('tslint', function() {

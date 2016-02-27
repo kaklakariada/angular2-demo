@@ -32,6 +32,9 @@
     "typings": "^0.6.8",
     "gulp": "^3.9.0",
     "gulp-typescript": "^2.8.0",
-    "del": "^2.1.0"
+    "del": "^2.1.0",
+    "browser-sync": "^2.9.11",
+    "gulp-watch": "^4.3.5",
+    "gulp-batch": "^1.0.5"
   }
 }
