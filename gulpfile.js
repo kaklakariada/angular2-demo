@@ -14,7 +14,7 @@ gulp.task('serve', ['compile', 'copy:libs'], function() {
       baseDir: ["./dist", "./"]
     }
   });
-  gulp.watch("app/**/*.ts", ['compile']);
+  gulp.watch("dist/**/*").on('change', browsersync.reload);
   gulp.watch("app/**/*.html").on('change', browsersync.reload);
   gulp.watch("index.html").on('change', browsersync.reload);
   gulp.watch("styles.css").on('change', browsersync.reload);
