@@ -69,7 +69,7 @@
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "no-var-requires": true,
-    "object-literal-sort-keys": true,
+    "object-literal-sort-keys": false,
     "one-line": [
       true,
       "check-open-brace",
@@ -88,7 +88,7 @@
     "switch-default": true,
     "trailing-comma": [
       true, {
-        "multiline": "always",
+        "multiline": "never",
         "singleline": "never"
       }
     ],
